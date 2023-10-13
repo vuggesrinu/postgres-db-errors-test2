@@ -1,0 +1,74 @@
+1) – Initdb Cannot Be Run as Root
+
+
+ initdb -D data initdb: error: cannot be run as root Please log in (using, e.g., "su") as the (unprivileged) user that will own the server process.
+ 
+ 
+ 
+ 
+ 
+
+
+2)– Initdb Failed Due to Directory ‘Invalid Permission’
+
+ initdb -D data running bootstrap script ... 
+FATAL:  data directory "data" has invalid permissions [1885] 
+DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750). 
+child process exited with exit code 1 initdb: removing data directory "data" 
+ 
+ Is the PostgreSQL Server Running Locally and Accepting?
+ 
+3) psql -U postgres -p 5432
+psql: 
+error: could not connect to server: could not connect to server: No such file or directory 
+Is the server running locally and accepting connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+ 
+
+4) The Server Terminated
+
+server closed the connection unexpectedly
+This probably means the server terminated abnormally
+before or while processing the request.
+The connection to the server was lost. Attempting reset: Failed
+
+
+
+5) Out of Memory Issue
+
+ERROR: out of memory 2020-05-08 
+DETAIL: Failed on request of size 1880.
+
+
+
+
+6) while running application showing technical error in application
+
+822-07-19 11:27:03 .885 IST [1922) LOG: received fast shutdown request
+022-07-19 11:27:03 .930 IST [1922) LOG: aborting any active transactions
+022-07-19 11:27:03 .932 IST [1435) FATAL: terminating connection due to administrator command 
+022-07-19 11:27:03 .932 IST [2702) FATAL: terminating connection due to administrator command 
+022-07-19 11:27:03 .932 IST [2677) FATAL : terminating connection due to administrator command 
+022-07-19 11:27:03 .932 IST [2561) FATAL : terminating connection due to administrator command 
+022-07-19 11:27:03 .932 IST [2604) FATAL: terminating connection due to administrator command 
+022-07-19 11:27 :03 .932 IST [21121) FATAL: terminating connection due to administrator command 
+022-07-19 11:27 :03 .933 IST [1438) FATAL : terminating connection due to administrator command 
+022-07-19 11:27 :03 .933 IST [2538) FATAL : terminating connection due to administrator command
+ 022-07-19 11 :27 :03 .933 IST (3291) FATAL : terminating co-ect ion due to administrator command 
+ 022-07-19 11 :27 :03 .933 IST (2708} FATAL : terminating co- ection due to administrator command
+ 022-07-19 11 :27:03.934 IST (2547) FATAL: terminating connection due to administrator command 
+ 022-07-19 11:27:03.934 IST (2548) FATAL: terminating connection due to administrator command
+ 022-07-19 11:27:03.934 IST (2540) FATAL: terminating connection due to administrator command
+ 022-07-19 11:27:03.934 IST [1434) FATAL: terminating connection due to administrator command
+ 022-07-19 11:27:03.935 IST (3294) FATAL: terminating co- ection due to administrator command
+ 022-07-19 11:27 :03.936 IST (2601) FATAL : terminating connection due to administrator command
+022-07-19 11:27 :03.936 IST (2539) FATAL : terminating connection due to administrator command
+ 022-07-19 11:27 :03.936 IST [2578]FATAL : cerminacing con_ eccion due co aclminiscracor command
+ 022-07-19 11 :27 :03.937 IST (2552) FATAL : terminating co- ection due to administrator command
+022-07-19 11 :27 :03.938 IST (2545) FATAL: terminating co- ection due to administrator command
+022-07-19 11 :27 :03.938 IST (2761) FATAL:  terminating connection due to administrator command
+"022-07-19 11:27:03.939 IST [1922)LOG: background worker ""logical replication launcher ' (PIO 1931) exited with exit code l 022-07-19 11:27:03.910 IST [2560) FATAL : terminating connection due to administrator command"
+022-07-19 11:27:03.911 IST [2185) FATAL : terminating connection due to administrator command 022-07-19 11:27:03.942 IST [2550) FATAL : terminating connection due to administrator command 022-07-19 11:27:03.943 IST [2559) FATAL: terminating connection due to administrator command 022-07-19 11:27:03.943 IST [2558) FATAL: terminating connection due to administrator command 022-07-19 11:27:03.950 IST [2716) FATAL: terminating connection due to administrator command
+022-07-19 11:27:03.951 IST [2700) FATAL: terminating connection due to administrator command 022-07-19 11:27:03 .953 IST [2694) FATAL: terminating connection due to administrator command 022-07-19 11:27:03 .954 IST [2551) FATAL: terminating connection due to administrator command 022-07-19 11:27:03 .954 IST [2664) FATAL: terminating connection due to administrator command 022-07-19 11:27:03 .955 IST [2544) FATAL: terminating connection due to administrator command 022-07-19 11:27:03 .956 IST [2648) FATAL: terminating connection due to administrator command 022-07-19 11:27:03 .979 IST [1926) LOG : shutting down
+022-07-19 11:27:04.263 IST [1922) LOG : database system is shut down
+:$

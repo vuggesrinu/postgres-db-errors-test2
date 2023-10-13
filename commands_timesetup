@@ -1,0 +1,404 @@
+
+  954  su - raios
+  955  su - mohan
+  956  su - raios
+  957  su - mohan
+  958  cat /etc/httpd/jk-workers.properties
+  959  cat /etc/httpd/raios/sharksmex.conf
+  960  df -h
+  961  pwd
+  962  /etc/init.d/mysqld stop
+  963  cd /var/lib/
+  964  ls -ltr
+  965  mv mysql/ mysql-original
+  966  unzip /tmp/mysql-old.zip
+  967  ls -ltr
+  968  mv mysql-original mysql
+  969  /etc/init.d/mysqld start
+  970  mysql
+  971  history |grep mysql
+  972   mysql -pCer3sidyb34
+  973  ls
+  974  ls -ltr
+  975  cd mysql
+  976  ls
+  977  cd mysql
+  978  ls
+  979  cd ../
+  980  ls -ltr
+  981  pwd
+  982  cd ../
+  983  ls -ltr
+  984  /etc/init.d/mysqld stop
+  985  mv mysql mysql-original
+  986  ls -ltr
+  987  mv mysql-old mysql
+  988  /etc/init.d/mysqld start
+  989  mysql
+  990  tail -f /var/log/mysqld.log
+  991  chown -R mysql:mysql mysql
+  992  /etc/init.d/mysqld start
+  993   mysql -pCer3sidyb34
+  994  mysqldump  -pCer3sidyb34 opencmsraios |gzip > opencmsraios.sql.gz
+  995  /etc/init.d/mysqld stop
+  996  ls -ltr
+  997  mv mysql  mysql-old
+  998  mv mysql-original mysql
+  999  /etc/init.d/mysqld start
+ 1000  pwd
+ 1001  history
+
+ file permissions
+ 
+ 
+ 
+ chmod 400 mydoc.txt read by owner
+chmod 040 mydoc.txt read by group
+chmod 004 mydoc.txt read by anybody (other)
+chmod 200 mydoc.txt write by owner
+chmod 020 mydoc.txt write by group
+chmod 002 mydoc.txt write by anybody
+chmod 100 mydoc.txt execute by owner
+chmod 010 mydoc.txt execute by group
+chmod 001 mydoc.txt execute by anybody
+
+
+7 = 4+2+1 (read/write/execute)
+6 = 4+2 (read/write)
+5 = 4+1 (read/execute)
+4 = 4 (read)
+3 = 2+1 (write/execute)
+2 = 2 (write)
+1 = 1 (execute)
+
+chmod 666 mydoc.txt read/write by anybody! (the devil loves this one!)
+chmod 755 mydoc.txt rwx for owner, rx for group and rx for the world
+chmod 777 mydoc.txt read, write, execute for all! (may not be the best plan in the world...)
+
+
+
+
+
+
+TO set TImeZone 
+
+/home/jiogames/.bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+export TZ="Asia/Kolkata"
+
+export PATH
+
+
+in tomcat
+
+/home/jiogames/tomcat/bin/catalina.sh
+
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xms6g -Xmx6g -XX:MaxPermSize=256m"
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xmx2g -Xms2g -XX:MaxPermSize=256m"
+
+
+sudo /etc/init.d/gameking-server stop
+sudo /etc/init.d/gameking-server start
+
+
+[root@mohan ~]# /etc/init.d/ntpd start
+Starting ntpd:                                             [  OK  ]
+[root@mohan ~]# date
+Mon Sep 18 01:20:54 EDT 2017
+[root@mohan ~]# date
+Mon Sep 18 01:20:58 EDT 2017
+[root@mohan ~]# /etc/init.d/ntpd stop
+Shutting down ntpd:                                        [  OK  ]
+[root@mohan ~]# ntpdate pool.ntp.org
+18 Sep 03:42:15 ntpdate[32025]: adjust time server 80.96.120.253 offset -0.000128 sec
+[root@mohan ~]# date
+Mon Sep 18 03:42:21 EDT 2017
+
+To collect gc(garbage-collection) in tomcat as manually
+
+jmap -dump:file=/home/jiogames/heapdump_2017-06-22.data 17657
+
+
+To collect gc(garbage-collection) in tomcat as automatically
+
+
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xms2g -Xmx4g -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/jiogmes/tomcat/logs/heap_dump"
+
+
+
+
+
+
+
+
+  954  su - raios
+  955  su - mohan
+  956  su - raios
+  957  su - mohan
+  958  cat /etc/httpd/jk-workers.properties
+  959  cat /etc/httpd/raios/sharksmex.conf
+  960  df -h
+  961  pwd
+  962  /etc/init.d/mysqld stop
+  963  cd /var/lib/
+  964  ls -ltr
+  965  mv mysql/ mysql-original
+  966  unzip /tmp/mysql-old.zip
+  967  ls -ltr
+  968  mv mysql-original mysql
+  969  /etc/init.d/mysqld start
+  970  mysql
+  971  history |grep mysql
+  972   mysql -pCer3sidyb34
+  973  ls
+  974  ls -ltr
+  975  cd mysql
+  976  ls
+  977  cd mysql
+  978  ls
+  979  cd ../
+  980  ls -ltr
+  981  pwd
+  982  cd ../
+  983  ls -ltr
+  984  /etc/init.d/mysqld stop
+  985  mv mysql mysql-original
+  986  ls -ltr
+  987  mv mysql-old mysql
+  988  /etc/init.d/mysqld start
+  989  mysql
+  990  tail -f /var/log/mysqld.log
+  991  chown -R mysql:mysql mysql
+  992  /etc/init.d/mysqld start
+  993   mysql -pCer3sidyb34
+  994  mysqldump  -pCer3sidyb34 opencmsraios |gzip > opencmsraios.sql.gz
+  995  /etc/init.d/mysqld stop
+  996  ls -ltr
+  997  mv mysql  mysql-old
+  998  mv mysql-original mysql
+  999  /etc/init.d/mysqld start
+ 1000  pwd
+ 1001  history
+
+ file permissions
+ 
+ 
+ 
+ chmod 400 mydoc.txt read by owner
+chmod 040 mydoc.txt read by group
+chmod 004 mydoc.txt read by anybody (other)
+chmod 200 mydoc.txt write by owner
+chmod 020 mydoc.txt write by group
+chmod 002 mydoc.txt write by anybody
+chmod 100 mydoc.txt execute by owner
+chmod 010 mydoc.txt execute by group
+chmod 001 mydoc.txt execute by anybody
+
+
+7 = 4+2+1 (read/write/execute)
+6 = 4+2 (read/write)
+5 = 4+1 (read/execute)
+4 = 4 (read)
+3 = 2+1 (write/execute)
+2 = 2 (write)
+1 = 1 (execute)
+
+chmod 666 mydoc.txt read/write by anybody! (the devil loves this one!)
+chmod 755 mydoc.txt rwx for owner, rx for group and rx for the world
+chmod 777 mydoc.txt read, write, execute for all! (may not be the best plan in the world...)
+
+
+
+
+
+
+TO set TImeZone 
+
+/home/jiogames/.bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+export TZ="Asia/Kolkata"
+
+export PATH
+
+
+in tomcat
+
+/home/jiogames/tomcat/bin/catalina.sh
+
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xms6g -Xmx6g -XX:MaxPermSize=256m"
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xmx2g -Xms2g -XX:MaxPermSize=256m"
+
+
+sudo /etc/init.d/gameking-server stop
+sudo /etc/init.d/gameking-server start
+
+
+[root@mohan ~]# /etc/init.d/ntpd start
+Starting ntpd:                                             [  OK  ]
+[root@mohan ~]# date
+Mon Sep 18 01:20:54 EDT 2017
+[root@mohan ~]# date
+Mon Sep 18 01:20:58 EDT 2017
+[root@mohan ~]# /etc/init.d/ntpd stop
+Shutting down ntpd:                                        [  OK  ]
+[root@mohan ~]# ntpdate pool.ntp.org
+18 Sep 03:42:15 ntpdate[32025]: adjust time server 80.96.120.253 offset -0.000128 sec
+[root@mohan ~]# date
+Mon Sep 18 03:42:21 EDT 2017
+
+
+
+
+
+
+
+passwords
+
+
+pramod.padamati
+Letzdoit1046
+
+latheesh8989@gmail.com
+Lath33sh@123
+
+
+veeru.srinivas
+Am@ravath1
+Myjiogames
+1231304/Kbagh2017
+www.shirnikhamei.com
+
+
+14938
+
+/usr/share/nagios/html/index.php on line 53
+
+
+To check connections
+
+netstat -na |grep 8810 |wc -l
+
+
+
+
+
+
+Question: When I installed the Linux OS, I forgot to set the proper timezone. How do I change the timezone on my Linux distribution. I use CentOS (Red Hat Linux). But, can you please explain me how to do this on all Linux distributions with some clear examples.
+
+Answer: Use one of the following methods to change the timezone on your Linux system. One of these methods should work for you depending on the Linux distribution you are using.
+Method 1: Change TimeZone Using /etc/localtime File
+
+For this example, assume that your current timezone is UTC as shown below. You would like to change this to Pacific Time.
+
+# date
+Mon Sep 17 22:59:24 UTC 2010
+
+On some distributions (for example, CentOS), the timezone is controlled by /etc/localtime file.
+
+Delete the current localtime file under /etc/ directory
+
+# cd /etc
+# rm localtime
+
+All US timezones are located under under the /usr/share/zoneinfo/US directory as shown below.
+
+# ls /usr/share/zoneinfo/US/
+Alaska          Arizona         Eastern         Hawaii          Michigan        Pacific
+Aleutian        Central         East-Indiana    Indiana-Starke  Mountain        Samoa
+
+Note: For other country timezones, browse the /usr/share/zoneinfo directory
+
+Link the Pacific file from the above US directory to the /etc/localtime directory as shown below.
+
+# cd /etc
+# ln -s /usr/share/zoneinfo/US/Pacific localtime
+
+Now the timezone on your Linux system is changed to US Pacific time as shown below.
+
+# date
+Mon Sep 17 23:10:14 PDT 2010
+
+Method 2: Change TimeZone Using /etc/timezone File
+
+On some distributions (for example, Ubuntu), the timezone is controlled by /etc/timezone file.
+
+For example, your current timezone might be US Eastern time (New York) as shown below.
+
+# cat /etc/timezone
+America/New_York
+
+To change this to US Pacific time (Los Angeles), modify the /etc/timezone file as shown below.
+
+# vim /etc/timezone
+America/Los_Angeles
+
+Also, set the timezone from the command line using the TZ variable.
+
+# export TZ=America/Los_Angeles
+
+
+
+TO set TImeZone 
+
+/home/jiogames/.bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+export TZ="Asia/Kolkata"
+
+export PATH
+
+
+in tomcat
+
+/home/jiogames/tomcat/bin/catalina.sh
+
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xms6g -Xmx6g -XX:MaxPermSize=256m"
+export JAVA_OPTS="$JAVA_OPTS -Duser.timezone=Asia/Kolkata -Xmx2g -Xms2g -XX:MaxPermSize=256m"
+
+
+sudo /etc/init.d/gameking-server stop
+sudo /etc/init.d/gameking-server start
+
+
+[root@mohan ~]# /etc/init.d/ntpd start
+Starting ntpd:                                             [  OK  ]
+[root@mohan ~]# date
+Mon Sep 18 01:20:54 EDT 2017
+[root@mohan ~]# date
+Mon Sep 18 01:20:58 EDT 2017
+[root@mohan ~]# /etc/init.d/ntpd stop
+Shutting down ntpd:                                        [  OK  ]
+[root@mohan ~]# ntpdate pool.ntp.org
+18 Sep 03:42:15 ntpdate[32025]: adjust time server 80.96.120.253 offset -0.000128 sec
+[root@mohan ~]# date
+Mon Sep 18 03:42:21 EDT 2017
+
+
+
+

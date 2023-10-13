@@ -1,0 +1,21 @@
+cd /home/gameking/tomcat/bin
+06-Jul-2017 11:11:16	./shutdown.sh
+06-Jul-2017 11:11:16	rm -rf /home/gameking/tomcat/webapps/*
+06-Jul-2017 11:11:16	rm -rf /home/gameking/tomcat/work/*
+06-Jul-2017 11:11:16	unzip /tmp/CasinoBO-26.war -d /home/gameking/tomcat/webapps/CasinoBO
+06-Jul-2017 11:11:16	cd ~
+06-Jul-2017 11:11:16	cp server/lib/*history*jar tomcat/webapps/CasinoBO/WEB-INF/lib
+06-Jul-2017 11:11:16	cd /home/gameking/tomcat/bin
+06-Jul-2017 11:11:16	./startup.sh
+06-Jul-2017 11:11:16	rm -f /tmp/CasinoBO-26.war
+06-Jul-2017 11:11:16	] has finished.
+06-Jul-2017 11:11:16	Result: exit code = 0
+06-Jul-2017 11:11:16	Finished task 'Execute Deployment' with result: Success
+06-Jul-2017 11:11:16	Finalising the build...
+06-Jul-2017 11:11:16	Stopping timer.
+06-Jul-2017 11:11:16	Build 851969-917509-1310765 completed.
+06-Jul-2017 11:11:16	Finished processing deployment result Deployment of 'release-15' on 'FunGameAsia-Production
+
+
+
+Email testing for migration emial changed and removed

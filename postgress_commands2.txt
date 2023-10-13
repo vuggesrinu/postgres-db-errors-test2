@@ -1,0 +1,130 @@
+[root@ne-r038-312cl sunil]# cd /var/lib/pgsql/9.2/
+[root@ne-r038-312cl 9.2]# ls
+backups             data_pokeraa           data_ranetwork               pgstartup_ftrpoker.log       pgstartup_pokermasti.log
+data                data_pokeraa_20170622  data_sports                  pgstartup_funtimecasino.log  pgstartup_ranetwork.log
+data_ftrpoker       data_pokeraa_bkp       data_starpoker               pgstartup_gameking.log       pgstartup_sports.log
+data_funtimecasino  data_pokerjacks        data_starpoker-bkp20170121   pgstartup_jiogames.log       pgstartup_starpoker.log
+data_gameking       data_pokerjacks_old    data_starpoker_bkp_20170517  pgstartup.log                pgstartup_ttargen.log
+data_jiogames       data-pokerjacks-old_1  jiogames.sql                 pgstartup_pokeraa.log
+data_playmychips    data_pokermasti        pg_bak_20170620.sql          pgstartup_pokerjacks.log
+[root@ne-r038-312cl 9.2]# cd /etc/init.d/
+[root@ne-r038-312cl init.d]# ls
+abrt-ccpp         functions        jiogames-server  netconsole        postgres-pokerjacks       postgres-ranetwork  sandbox
+abrtd             gameking-server  kdump            netfs             postgresql-9.2            psacct              saslauthd
+abrt-oops         haldaemon        killall          network           postgresql-ftrpoker       quota_nld           single
+acpid             halt             lm_sensors       nfs-rdma          postgresql-funtimecasino  rdisc               smartd
+atd               htcacheclean     lvm2-lvmetad     nrpe              postgresql-gameking       rdma                sshd
+auditd            httpd            lvm2-monitor     ntpd              postgresql-jiogames       restorecond         svnserve
+blk-availability  ip6tables        mdmonitor        ntpdate           postgresql-pokermasti     rngd                sysstat
+cpuspeed          iptables         messagebus       postfix           postgresql-sports         rpcbind             udev-post
+crond             irqbalance       mysqld           postgres-pokeraa  postgresql-starpoker      rsyslog             winbind
+[root@ne-r038-312cl init.d]# vi /etc/sysconfig/iptables
+[root@ne-r038-312cl init.d]# cd /etc/sysconfig/
+[root@ne-r038-312cl sysconfig]# ls
+acpid       console       httpd             kdump       network          pgsql          rngd       smartmontools               udev
+atd         cpuspeed      i18n              kernel      networking       prelink        rsyslog    sshd
+auditd      crond         init              keyboard    network-scripts  quota_nld      samba      sysstat
+authconfig  firstboot     ip6tables-config  lm_sensors  nrpe             raid-check     sandbox    sysstat.ioconf
+cbq         grub          iptables-config   modules     ntpd             readahead      saslauthd  system-config-firewall
+clock       htcacheclean  irqbalance        netconsole  ntpdate          readonly-root  selinux    system-config-firewall.old
+[root@ne-r038-312cl sysconfig]# vi system-config-firewall
+[root@ne-r038-312cl sysconfig]# vi init
+[root@ne-r038-312cl sysconfig]# cd /etc/init.d/
+[root@ne-r038-312cl init.d]# ls
+abrt-ccpp         functions        jiogames-server  netconsole        postgres-pokerjacks       postgres-ranetwork  sandbox
+abrtd             gameking-server  kdump            netfs             postgresql-9.2            psacct              saslauthd
+abrt-oops         haldaemon        killall          network           postgresql-ftrpoker       quota_nld           single
+acpid             halt             lm_sensors       nfs-rdma          postgresql-funtimecasino  rdisc               smartd
+atd               htcacheclean     lvm2-lvmetad     nrpe              postgresql-gameking       rdma                sshd
+auditd            httpd            lvm2-monitor     ntpd              postgresql-jiogames       restorecond         svnserve
+blk-availability  ip6tables        mdmonitor        ntpdate           postgresql-pokermasti     rngd                sysstat
+cpuspeed          iptables         messagebus       postfix           postgresql-sports         rpcbind             udev-post
+crond             irqbalance       mysqld           postgres-pokeraa  postgresql-starpoker      rsyslog             winbind
+[root@ne-r038-312cl init.d]# ps -ef | grep postmaster
+postgres  8673     1  0 16:20 ?        00:00:01 /usr/pgsql-9.2/bin/postmaster -p 5439 -D /var/lib/pgsql/9.2/data_ranetwork
+root     23710 22733  0 17:37 pts/0    00:00:00 grep postmaster
+[root@ne-r038-312cl init.d]# pwd
+/etc/init.d
+[root@ne-r038-312cl init.d]# service postgresql-sports start
+Starting postgresql-sports service:                        [  OK  ]
+[root@ne-r038-312cl init.d]# ps -ef | grep postmaster
+postgres  8673     1  0 16:20 ?        00:00:01 /usr/pgsql-9.2/bin/postmaster -p 5439 -D /var/lib/pgsql/9.2/data_ranetwork
+postgres 23769     1  0 17:37 ?        00:00:00 /usr/pgsql-9.2/bin/postmaster -p 5438 -D /var/lib/pgsql/9.2/data_sports
+root     23786 22733  0 17:37 pts/0    00:00:00 grep postmaster
+[root@ne-r038-312cl init.d]# psql -U postgres -p 5438
+psql (9.2.21)
+Type "help" for help.
+
+postgres=# \l
+                                    List of databases
+     Name      |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
+---------------+----------+----------+-------------+-------------+-----------------------
+ bettingsystem | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ postgres      | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+               |          |          |             |             | postgres=CTc/postgres
+ template1     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+               |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \q
+[root@ne-r038-312cl init.d]# psql -U postgres -p 5438
+psql (9.2.21)
+Type "help" for help.
+
+postgres=# \dt
+No relations found.
+postgres=# \l
+                                    List of databases
+     Name      |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges
+---------------+----------+----------+-------------+-------------+-----------------------
+ bettingsystem | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ postgres      | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+               |          |          |             |             | postgres=CTc/postgres
+ template1     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+               |          |          |             |             | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c bettingsystem
+You are now connected to database "bettingsystem" as user "postgres".
+bettingsystem=# \dt
+                 List of relations
+ Schema |         Name          | Type  |  Owner
+--------+-----------------------+-------+----------
+ public | admin                 | table | postgres
+ public | bet_limits_conf       | table | postgres
+ public | bet_slip              | table | postgres
+ public | book_maker            | table | postgres
+ public | book_maker_odds       | table | postgres
+ public | event                 | table | postgres
+ public | hibernate_sequences   | table | postgres
+ public | in_active_markets     | table | postgres
+ public | inner_odds            | table | postgres
+ public | market                | table | postgres
+ public | match                 | table | postgres
+ public | match_event_results   | table | postgres
+ public | match_results         | table | postgres
+ public | match_results_display | table | postgres
+ public | match_status          | table | postgres
+ public | module                | table | postgres
+ public | navigation            | table | postgres
+ public | odd_name              | table | postgres
+ public | permission            | table | postgres
+ public | player                | table | postgres
+ public | playerinfo            | table | postgres
+ public | playerwallet          | table | postgres
+ public | remote_system_details | table | postgres
+ public | remoteplayerinfo      | table | postgres
+ public | sessionentity         | table | postgres
+ public | sports                | table | postgres
+ public | sportsodds            | table | postgres
+ public | team                  | table | postgres
+ public | test                  | table | postgres
+ public | testentity            | table | postgres
+ public | testentity_set        | table | postgres
+ public | transaction           | table | postgres
+ public | transactions          | table | postgres
+(33 rows)
+
+bettingsystem=# \q
